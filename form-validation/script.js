@@ -1,12 +1,15 @@
+// Selecting nodes
 const form = document.getElementById('form');
 const username = document.getElementById('username');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
 
+// first letter uppercase of a string
 const getFieldName = (input) =>
   input.id.charAt(0).toUpperCase() + input.id.split('').slice(1).join('');
 
+// Error function
 const showError = (input, message) => {
   const formControl = input.parentElement;
   formControl.className = 'form-control error';
@@ -14,11 +17,13 @@ const showError = (input, message) => {
   small.innerText = message;
 };
 
+// Success field f
 const showSuccess = (input) => {
   const formControl = input.parentElement;
   formControl.className = 'form-control success';
 };
 
+// All fields requried / checking empty
 const checkRequired = (inputArr) => {
   let isRequired = false;
   inputArr.forEach((input) => {
@@ -32,6 +37,8 @@ const checkRequired = (inputArr) => {
   return isRequired;
 };
 /*eslint-disable*/
+
+// Email validation with regex
 const validateEmail = (userEmail) => {
   const re =
   /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -45,12 +52,15 @@ const validateEmail = (userEmail) => {
   }
 };
 
+// password field match
 function validatePassword(pass1, pass2) {
   if (pass1.value !== pass2.value) {
     showError(pass1, 'Password did not match');
     showError(pass2, 'Password did not match');
   }
 }
+
+// Min/max length check of fields
 function checkLength(input, min, max) {
   if (input.value.length > max) {
     showError(input, 'Password must be inside 15 characters');
