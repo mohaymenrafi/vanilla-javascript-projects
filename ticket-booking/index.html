@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="./app.js" defer></script>
+    <title>Ticket Booking</title>
+  </head>
+  <body>
+    <div class="veichel--container">
+      <label>Pick a Bus:</label>
+      <select id="bus" class="veichel--container__list">
+        <option value="10">Non-AC Regular</option>
+        <option value="15">AC Economy</option>
+        <option value="20">AC Business</option>
+        <option value="30">AC Sleeping Coach</option>
+      </select>
+    </div>
+    <ul class="showcase">
+      <li class="showcase__items">
+        <div class="seat"></div>
+        <small class="showcase__items--text">Available</small>
+      </li>
+      <li class="showcase__items">
+        <div class="seat seat__selected"></div>
+        <small class="showcase__items--text">Selected</small>
+      </li>
+      <li class="showcase__items">
+        <div class="seat seat__occupied"></div>
+        <small class="showcase__items--text">Occupied</small>
+      </li>
+    </ul>
+    <div class="seat--list">
+      <div class="seat--list__driver">
+        <img
+          src="./images/steeing.png"
+          alt=""
+          class="seat--list__driver--img"
+        />
+      </div>
+      <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat seat__occupied"></div>
+        <div class="seat"></div>
+      </div>
+      <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+      <div class="row">
+        <div class="seat"></div>
+        <div class="seat seat__occupied"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+      <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+      <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat seat__occupied"></div>
+        <div class="seat seat__occupied"></div>
+      </div>
+      <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+      <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+      <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat seat__occupied"></div>
+        <div class="seat"></div>
+      </div>
+      <div class="row">
+        <div class="seat seat__occupied"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+      <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat seat__occupied"></div>
+        <div class="seat"></div>
+      </div>
+    </div>
+    <div class="user">
+      <p class="user__info">
+        You have selected
+        <span id="count" class="user__info--text">0</span> seats and the cost is
+        $<span id="total" class="user__info--text">0</span>
+      </p>
+    </div>
+  </body>
+</html>
