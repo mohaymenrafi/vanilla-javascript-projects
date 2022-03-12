@@ -33,7 +33,6 @@ function updateInfo() {
 
 function saveBusInfo(index) {
   localStorage.setItem('busNameIndex', index);
-  //   localStorage.setItem('busFare', price);
 }
 
 // event on busname change
