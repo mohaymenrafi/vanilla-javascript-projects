@@ -1,0 +1,131 @@
+// font family import
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+// sass variables
+$light-black: rgba(0, 0, 0, 0.7);
+$red: red;
+
+//Styling started
+
+//Global
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: rgba(211, 211, 211, 0.3);
+  font-family: "Nunito", sans-serif;
+}
+
+.visible {
+  transform: translateX(0px) !important;
+  transition: transform 0.9s ease;
+}
+
+//Header styling
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  //hamburger menu
+  &__menu {
+    div {
+      cursor: pointer;
+      span {
+        display: inline-block;
+        position: relative;
+        width: 35px;
+        height: 2px;
+        border-radius: 3px;
+        background-color: $light-black;
+        &::after {
+          content: "";
+          position: absolute;
+          width: 35px;
+          height: 2px;
+          top: -10px;
+          background-color: $light-black;
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          width: 35px;
+          height: 2px;
+          top: 10px;
+          background-color: $light-black;
+        }
+      }
+    }
+  }
+
+  //sidemenu
+  &__sidemenu {
+    background-color: rgba(113, 219, 245, 1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 350px;
+    height: 100vh;
+    transform: translateX(-350px);
+    transition: transform 0.9s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    ul {
+      li {
+        list-style: none;
+        font-size: 2.2rem;
+        padding-bottom: 1rem;
+        transition: transform 0.3s ease;
+
+        position: relative;
+        &:hover {
+          transform: translateX(30px);
+          cursor: pointer;
+          &::before {
+            transform: translateX(-45px);
+            animation: menuIndicator 0.2s forwards;
+          }
+        }
+        &::before {
+          position: absolute;
+          content: "";
+          background-color: $light-black;
+          top: 22px;
+          left: 20px;
+          width: 15px;
+          height: 3px;
+          transition: transform 0.2s ease;
+          opacity: 0;
+        }
+      }
+    }
+    //menu close
+    &-close {
+      background-color: transparent;
+      border: none;
+      font-size: 1.7rem;
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      cursor: pointer;
+    }
+  }
+}
+
+// animation
+@keyframes menuIndicator {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}

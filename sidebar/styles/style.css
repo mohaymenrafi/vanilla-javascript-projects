@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgba(211, 211, 211, 0.3);
+  font-family: "Nunito", sans-serif;
+}
+
+.visible {
+  -webkit-transform: translateX(0px) !important;
+          transform: translateX(0px) !important;
+  -webkit-transition: -webkit-transform 0.9s ease;
+  transition: -webkit-transform 0.9s ease;
+  transition: transform 0.9s ease;
+  transition: transform 0.9s ease, -webkit-transform 0.9s ease;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem;
+}
+
+.header__menu div {
+  cursor: pointer;
+}
+
+.header__menu div span {
+  display: inline-block;
+  position: relative;
+  width: 35px;
+  height: 2px;
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.header__menu div span::after {
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 2px;
+  top: -10px;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.header__menu div span::before {
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 2px;
+  top: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.header__sidemenu {
+  background-color: #71dbf5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 350px;
+  height: 100vh;
+  -webkit-transform: translateX(-350px);
+          transform: translateX(-350px);
+  -webkit-transition: -webkit-transform 0.9s ease;
+  transition: -webkit-transform 0.9s ease;
+  transition: transform 0.9s ease;
+  transition: transform 0.9s ease, -webkit-transform 0.9s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.header__sidemenu ul li {
+  list-style: none;
+  font-size: 2.2rem;
+  padding-bottom: 1rem;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  position: relative;
+}
+
+.header__sidemenu ul li:hover {
+  -webkit-transform: translateX(30px);
+          transform: translateX(30px);
+  cursor: pointer;
+}
+
+.header__sidemenu ul li:hover::before {
+  -webkit-transform: translateX(-45px);
+          transform: translateX(-45px);
+  -webkit-animation: menuIndicator 0.2s forwards;
+          animation: menuIndicator 0.2s forwards;
+}
+
+.header__sidemenu ul li::before {
+  position: absolute;
+  content: "";
+  background-color: rgba(0, 0, 0, 0.7);
+  top: 22px;
+  left: 20px;
+  width: 15px;
+  height: 3px;
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+  opacity: 0;
+}
+
+.header__sidemenu-close {
+  background-color: transparent;
+  border: none;
+  font-size: 1.7rem;
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  cursor: pointer;
+}
+
+@-webkit-keyframes menuIndicator {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes menuIndicator {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=style.css.map */
